@@ -11,6 +11,9 @@ class Category(models.Model):
     name = models.CharField(max_length=250)
     active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 class BlogEntry(models.Model):
     category = models.ForeignKey(Category, verbose_name='category',on_delete=models.PROTECT)
     title = models.CharField(max_length=250)
@@ -19,9 +22,14 @@ class BlogEntry(models.Model):
     post_image = models.ImageField(null=True, blank=True, upload_to='BlogEntry/')
     active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.title
+
 class Images(models.Model):
     id = models.AutoField(primary_key=True)
     active = models.BooleanField(default=True)
     images = models.ImageField(null=True, blank=True, upload_to='Images/')
     gallery = models.ManyToManyField(BlogEntry)
+
+    
     
