@@ -15,21 +15,21 @@
 		<a href="index.html" class="logo">
 			<img src="images/logo.jpg" alt="">
 		</a>
-		<ul id="navigation">
+		<!--ul id="navigation">
 		{% for category in category %}
 			<li>
 				<a href=" {% url "blogEntry" category.slug %} ">{{category.name}}</a>
 			</li>
 		{% endfor %}
-		</ul>
+		</ul-->
 	</div>
 	<div id="body">
 		<h1><span>gallery</span></h1>
 		<ul class="gallery">
-		{% for i in galery %}
+		{% for i in image %}
 			<li>
 				<a href="gallery-single-post.html">
-					<img src="{{i.images.url}}" width="150px" alt="">
+					<img src="{{i.image.url}}" width="150px" alt="">
 				</a>
 			</li>
 		{% endfor %}		
